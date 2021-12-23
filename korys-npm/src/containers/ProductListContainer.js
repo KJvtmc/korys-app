@@ -20,12 +20,30 @@ class ProductListContainer extends Component {
                     title: 'Vakcinacijos centras',
                     imageUrl: "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg",
                     description: "Kraunasi",
-                    // quantity: "Kraunasi",
+                    vakcinos: [
+                        {
+                          pavadinimas: "Moderna (Spikevax)",
+                          kiekis: 0,
+                        },
+                        {
+                          pavadinimas: "Pfizer–BioNTech (Comirnaty)",
+                          kiekis: 0,
+                        },{
+                          pavadinimas: "Oxford–AstraZeneca (Vaxzevria)",
+                          kiekis: 0,
+                        },{
+                          pavadinimas: "Johnson & Johnson (Janssen)",
+                          kiekis: 0,
+                        },{
+                          pavadinimas: "Pfizer–BioNTech (5-11 metų vaikams)",
+                          kiekis: 0,
+                        }
+                    ],
                 },
             ]
         };
         this.api = axios.create({
-            baseURL: "http://localhost:8081/korys-app/vakcinacija/centrai/"
+            baseURL: "http://localhost:8081/korys-war/vakcinacija/centrai/"
         });
     }
 

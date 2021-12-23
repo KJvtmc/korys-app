@@ -10,7 +10,7 @@ class Admin extends Component {
                     <h2>Puslapio administravimas   </h2>
                 </header>
                 <main className="px-3">
-                    <h3>Valcinacijos centrai</h3>
+                    <h3>Vakcinacijos centrai</h3>
                     <AddProductClass />
                     <h3>Registruoti pacientai</h3>
                     <UserContainer />

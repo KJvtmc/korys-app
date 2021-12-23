@@ -5,7 +5,9 @@ import {  Link } from 'react-router-dom';
 
 function ProductDetailsComponent (props) {
     
-    const { cart, setCart, setProductdetails } = useContext(LoginContext);
+    // const { cart, setCart, setProductdetails } = useContext(LoginContext);
+    const { setProductdetails } = useContext(LoginContext);
+
     var needsDefaultImage = props.product.imageUrl!==null?false:true;
     var needsDefaultDescription = props.product.description!==""?false:true;
     return (
@@ -17,7 +19,7 @@ function ProductDetailsComponent (props) {
                 <p className="card-text">Turimos vakcinos:</p>
                 <p className="card-text">Bendras vakcinų kiekis:</p>
                 <Link to={`/registracija`} >
-                <button className="btn btn-primary" >Registruoti pacientą</button>
+                <button className="btn btn-primary" onClick={()=>setProductdetails(props.product)} >Registruoti pacientą</button>
                 </Link>
                 <Link to={`/${props.id}`} >
                 <button className="btn btn-primary" onClick={()=>setProductdetails(props.product)}>Daugiau</button>

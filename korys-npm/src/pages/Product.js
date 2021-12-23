@@ -2,12 +2,13 @@
 import {  Link } from 'react-router-dom';
 import React, { useContext } from 'react';
 import {LoginContext} from '../contexts/LoginContext';
-import Login from '../components/Login';
-import ShowUser from '../components/ShowUser';
+// import Login from '../components/Login';
+// import ShowUser from '../components/ShowUser';
 
 function Product () {
 
-    const { cart, setCart, productdetails, showusername} = useContext(LoginContext);
+    // const { cart, setCart, productdetails, showusername} = useContext(LoginContext);
+    const { productdetails} = useContext(LoginContext);
     var needsDefaultImage = productdetails.imageUrl!==null?false:true;
     var needsDefaultDescription = productdetails.description!==""?false:true;
     
@@ -24,7 +25,7 @@ function Product () {
                 <p className="card-text">{(needsDefaultDescription)?productdetails.description:"Aprašymas kraunamas"}</p>
                 <p className="card-text">Turimos vakcinos: </p>
             
-                <button className="btn btn-primary" onClick={()=>setCart(cart+1)}>Registruoti pacientą</button>
+                <button className="btn btn-primary" >Registruoti pacientą</button>
                 <Link to='/' >
                 <button className="btn btn-primary" >Grįžti</button>
                 </Link>

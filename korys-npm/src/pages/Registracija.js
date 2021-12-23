@@ -1,5 +1,6 @@
-import { Form, Button, Table } from "react-bootstrap";
-import { useState, createRef } from 'react';
+import { Form, Button} from "react-bootstrap";
+import { useState, createRef, useContext } from 'react';
+import {LoginContext} from '../contexts/LoginContext';
 import React from 'react';
 
 // forma naudojantis funkcijomis, ref, hooks
@@ -7,6 +8,7 @@ export default function AddProduct() {
 
     //type of data [stateData, stateUpdateFunction] = useState(initialData)
     let initialValue = [];
+    const { productdetails} = useContext(LoginContext);
     const [products, setProduct] = useState(initialValue);
     const formData = createRef();
     //addproduct handler
@@ -47,6 +49,10 @@ export default function AddProduct() {
 
     return (
         <div>
+            <div>
+            <h1> Registracija į {productdetails.title}</h1>    
+            </div>    
+
             <Form onSubmit={addProduct} ref={formData}>
                 <Form.Group className="mb-3" controlId="formBasicProductName">
                     <Form.Label>Vardas</Form.Label>
@@ -60,9 +66,20 @@ export default function AddProduct() {
                     <Form.Label>Asmens kodas</Form.Label>
                     <Form.Control type="number" min="8" max="8"  name="productQuantity" />
                 </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Pasirinkite vakciną</Form.Label>
+                        <Form.Select >
+                            <option>Moderna (Spikevax): {productdetails.moderna}</option>
+                            <option>Pfizer–BioNTech (Comirnaty): {productdetails.comirnaty}</option>
+                            <option>Oxford–AstraZeneca (Vaxzevria): {productdetails.vaxzevria}</option>
+                            <option>Johnson & Johnson (Janssen): {productdetails.janssen}</option>
+                            <option>Pfizer–BioNTech (5-11 metų vaikams): {productdetails.biontech}</option>
+                        </Form.Select>
+                </Form.Group>
                 <Button variant="primary" type="submit">
                     Registruoti
                 </Button>
+
             </Form>
             
         </div>

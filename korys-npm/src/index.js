@@ -54,7 +54,12 @@ var AppContainer = (props) => {
     title: 'Vakcinacijos centras',
     imageUrl: "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg",
     description: "Kraunasi",
-    // quantity: "Kraunasi",
+    moderna: 1,
+    comirnaty: 1,
+    vaxzevria: 1,
+    janssen: 1,
+    biontech :0,
+  
 });
   return (
   <div>
