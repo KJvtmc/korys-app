@@ -10,7 +10,7 @@ const UserListComponent = ({ users }) => {
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Firstname</th>
                     <th scope="col">Lastname</th>
                 </tr>

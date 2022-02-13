@@ -1,15 +1,15 @@
 
 import './App.css';
-import React, { useContext } from 'react';
+import React  from 'react';
 import ProductListContainer from './containers/ProductListContainer';
 // import ServicesContext from './ServicesContext';
-import Login from './components/Login';
-import ShowUser from './components/ShowUser';
-import { LoginContext } from './contexts/LoginContext';
+// import Login from './components/Login';
+// import ShowUser from './components/ShowUser';
+// import { LoginContext } from './contexts/LoginContext';
 
 
 function App() {
-  const { showusername, cart } = useContext(LoginContext);
+  // const { showusername, cart } = useContext(LoginContext);
   return (
     <div className="App">
       

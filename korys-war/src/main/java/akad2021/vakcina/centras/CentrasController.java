@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import akad2021.vakcina.PagingData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +33,7 @@ public class CentrasController {
 		pagingData.setLimit(10);
 		return centrasService.getCentrai()
 				.stream()
-				.map(centras->new Centras(centras.getPavadinimas(), centras.getImgNuoroda(), centras.getAprasymas()))
+				.map(centras->new Centras(centras.getPavadinimas(), centras.getImgNuoroda(), centras.getAprasymas(), centras.getVieta(), centras.getKabinos(), centras.getVakcinos()))
 				.collect(Collectors.toList()); 
     }
 	@RequestMapping(method = RequestMethod.PUT)
@@ -44,7 +43,10 @@ public class CentrasController {
 		centrasService.setCentras(new CentrasFromService(
 				centras.getPavadinimas(),
 				centras.getImgNuoroda(),
-				centras.getAprasymas()
+				centras.getAprasymas(),
+				centras.getVieta(),
+				centras.getKabinos(), 
+				centras.getVakcinos()
 				));
 	}
 }

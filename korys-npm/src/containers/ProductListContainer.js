@@ -1,6 +1,9 @@
+
 import React, { Component } from "react";
 import ProductListComponent from "../components/ProductListComponent";
 import axios from 'axios';
+import { LoginContext } from '../contexts/LoginContext';
+
 // axios.get('https://itpro2017.herokuapp.com/api/products')
 // .then( (response) => {
 // console.log(response);
@@ -11,40 +14,16 @@ import axios from 'axios';
 
 
 class ProductListContainer extends Component {
+    static contextType=LoginContext;
     constructor() {
         super();
         this.state = {
-            products: [
-                {
-                    id: 0,
-                    title: 'Vakcinacijos centras',
-                    imageUrl: "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg",
-                    description: "Kraunasi",
-                    vakcinos: [
-                        {
-                          pavadinimas: "Moderna (Spikevax)",
-                          kiekis: 0,
-                        },
-                        {
-                          pavadinimas: "Pfizer–BioNTech (Comirnaty)",
-                          kiekis: 0,
-                        },{
-                          pavadinimas: "Oxford–AstraZeneca (Vaxzevria)",
-                          kiekis: 0,
-                        },{
-                          pavadinimas: "Johnson & Johnson (Janssen)",
-                          kiekis: 0,
-                        },{
-                          pavadinimas: "Pfizer–BioNTech (5-11 metų vaikams)",
-                          kiekis: 0,
-                        }
-                    ],
-                },
-            ]
+            products: [],
         };
         this.api = axios.create({
             baseURL: "http://localhost:8081/korys-war/vakcinacija/centrai/"
         });
+
     }
 
     componentDidMount() {
@@ -55,11 +34,18 @@ class ProductListContainer extends Component {
             const productsFromServer = response.data;
             // console.log("from service ");
             // console.log(productsFromServer);
+            
             this.setState({ products: productsFromServer });
             // console.log("state ");
             // console.log(this.state.products);
+            
         }
-        setTimeout(loadProducts, 1000)
+        setTimeout(loadProducts, 1000);
+        console.log(this.state.products);
+        if(this.state.products.length===0){
+            const context=this.context;
+            this.setState({products: [context.productdetails]})
+        }
     }
 
 
@@ -67,7 +53,7 @@ class ProductListContainer extends Component {
         return (
             <div className="container">
                 <div className="row">
-                        <ProductListComponent products={this.state.products} />
+                    <ProductListComponent products={this.state.products} />
                 </div>
             </div>
         );

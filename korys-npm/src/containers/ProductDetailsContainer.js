@@ -1,4 +1,4 @@
-
+import 'bootstrap';
 import ProductDetailsComponent from "../components/ProductDetailsComponent";
 import React from "react";
 

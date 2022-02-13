@@ -1,11 +1,16 @@
 package akad2021.vakcina;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 import akad2021.vakcina.carts.CartProduct;
 import akad2021.vakcina.centras.Centras;
+import akad2021.vakcina.centras.Kabina;
+import akad2021.vakcina.centras.Vakcina;
 import akad2021.vakcina.users.User;
 
 @ImportResource({"classpath*:application-context.xml"})
@@ -27,6 +32,26 @@ public class AppConfig {
 //	}
 //	
 	//Objects
+	
+	@Bean(name="vakcina")
+	public Vakcina getVakcina() {
+		return new Vakcina();
+	}
+	
+	@Bean(name="vakcinos")
+	public List<Vakcina> getVakcinos() {
+		return new ArrayList<Vakcina>();
+	}
+	
+	@Bean(name="kabina")
+	public Kabina getKabina() {
+		return new Kabina();
+	}
+	
+	@Bean(name="kabinos")
+	public List<Kabina>getKabinos() {
+		return new ArrayList<Kabina>();
+	}
 	
 	@Bean(name="centras")
 	public Centras getProduct() {
@@ -64,11 +89,33 @@ public class AppConfig {
 //		return new DBUserDAO();
 //	}
 	
+	//Boolean
+	
+	@Bean(name="statusas")
+	public Boolean getStatusas() {
+		return false;
+	}
+	
 	//Strings
 	
 	@Bean(name="pavadinimas")
 	public String getPavadinimas() {
 		return "DefaultTitle";
+	}
+	
+	@Bean(name="vieta")
+	public String getVieta() {
+		return "DefaultAddress";
+	}
+	
+	@Bean(name="vakcinosPavadinimas")
+	public String getVakcinosPavadinimas() {
+		return "DefaultVaccineTitle";
+	}
+	
+	@Bean(name="gamintojas")
+	public String getGamintojas() {
+		return "DefaultVaccineSupplier";
 	}
 	
 	@Bean(name="itemTitle")
@@ -78,7 +125,7 @@ public class AppConfig {
 	
 	@Bean(name="imgNuoroda")
 	public String getPriceString() {
-		return "DefaultLink";
+		return "hospital.jpg";
 	}
 	
 	@Bean(name="aprasymas")
@@ -86,7 +133,39 @@ public class AppConfig {
 		return "Vakcinacijos centro aprasymas bus patikslintas netrukus";
 	}
 	
+	@Bean(name="itemFirstName")
+	public String getFirstName() {
+		return "DefaultFirstName";
+	}
+	
+	@Bean(name="itemLastName")
+	public String getLastNameString() {
+		return "DefaultLastName";
+	}
 
+	//Numbers
+	
+	@Bean(name="partija")
+	public Long getPartija() {
+		return (long) 0;
+	}
+	
+
+	@Bean(name="vakcinosKiekis")
+	public int getVakcinosKiekis() {
+		return 0;
+	}
+	
+	@Bean(name="centroNr")
+	public Long getCentroNr() {
+		return (long) 100000001;
+	}
+	
+	@Bean(name="kabinosNr")
+	public Long getKabinosNr() {
+		return (long) 200000001;
+	}
+	
 	@Bean(name="itemPriceD")
 	public double getPriceDouble() {
 		return 0;
@@ -102,13 +181,5 @@ public class AppConfig {
 		return (long) 400000000;
 	}
 	
-	@Bean(name="itemFirstName")
-	public String getFirstName() {
-		return "DefaultFirstName";
-	}
 	
-	@Bean(name="itemLastName")
-	public String getLastNameString() {
-		return "DefaultLastName";
-	}
 }

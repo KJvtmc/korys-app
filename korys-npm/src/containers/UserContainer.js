@@ -18,16 +18,16 @@ class UserContainer extends Component {
     constructor() {
         super();
         this.state = {
-            users: []
-                // {
-                //     userName: "loading from DB",
-                //     firstName: "loading from DB",
-                //     lastName: "loading from DB",
-                // }
-            // ]
+            users: [
+                {
+                    id: null,
+                    firstName: "loading from DB",
+                    lastName: "loading from DB",
+                }
+            ]
         };
         this.api = axios.create({
-            baseURL: "http://localhost:8081/korys-app/product/list"
+            baseURL: "http://localhost:8081/korys-war/api/users"
         });
     }
 

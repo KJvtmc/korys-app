@@ -16,12 +16,12 @@ public class CentrasService {
 	@Transactional(readOnly = true)
 	public List<CentrasFromService> getCentrai() {
 		return centrasDao.findAll().stream()
-				.map(centras -> new CentrasFromService(centras.getPavadinimas(),centras.getImgNuoroda(),centras.getAprasymas()))
+				.map(centras -> new CentrasFromService(centras.getPavadinimas(),centras.getImgNuoroda(),centras.getAprasymas(), centras.getVieta(), centras.getKabinos(), centras.getVakcinos()))
 				.collect(Collectors.toList()); 
 	}
 	@Transactional
 	public void setCentras(CentrasFromService centrasFromService) {
-		var centras = new Centras(centrasFromService.getPavadinimas(),centrasFromService.getImgNuoroda(),centrasFromService.getAprasymas());
+		var centras = new Centras(centrasFromService.getPavadinimas(),centrasFromService.getImgNuoroda(),centrasFromService.getAprasymas(), centrasFromService.getVieta(), centrasFromService.getKabinos(), centrasFromService.getVakcinos());
 		centrasDao.save(centras);
 	}
 

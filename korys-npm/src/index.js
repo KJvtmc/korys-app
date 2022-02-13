@@ -1,3 +1,5 @@
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -45,25 +47,49 @@ var NoMatch = (props) => {
 // };
 
 var AppContainer = (props) => {
-  const [showusername, setShowusername] = useState(false);
-  const [username, setUsername] = useState("");
-  const [cart, setCart] = useState(0);
+  // const [showusername, setShowusername] = useState(false);
+  // const [username, setUsername] = useState("");
+  // const [cart, setCart] = useState(0);
   
   const [productdetails, setProductdetails] = useState({
     id: 0,
-    title: 'Vakcinacijos centras',
-    imageUrl: "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg",
-    description: "Kraunasi",
-    moderna: 1,
-    comirnaty: 1,
-    vaxzevria: 1,
-    janssen: 1,
-    biontech :0,
-  
+    pavadinimas: 'Vakcinacijos centras',
+    imgNuoroda: "loading.jpg",
+    aprasymas: "Kraunasi",
+    vieta: "default",
+    kabinos: [
+      {
+        id: 200000001,
+        centras: null,
+        kabinosId: 1,
+        statusas: true,
+      },
+      {
+        id: 200000001,
+        centras: null,
+        kabinosId: 3,
+        statusas: false,
+      },
+      {
+        id: 200000001,
+        centras: null,
+        kabinosId: 2,
+        statusas: true,
+      }
+    ],
+    vakcinos: [
+      {
+        partijosId: 300001 ,
+        centras: null,
+        gamintojas:"Moderna",
+        pavadinimas:"Moderna (Spikevax)",
+        kiekis: 1,
+      }
+    ]
 });
   return (
   <div>
-    <LoginContext.Provider value={{username, setUsername, showusername, setShowusername, cart, setCart, productdetails, setProductdetails}}>
+    <LoginContext.Provider value={{productdetails, setProductdetails}}>
     <div>
       <nav className="navbar navbar-light bg-light">
         <div className="container-fltuid align-start">
@@ -79,7 +105,7 @@ var AppContainer = (props) => {
 
 ReactDOM.render((
   <div>
-    <BrowserRouter >
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AppContainer>
         <Switch>
           <Route exact path='/' component={ App } />

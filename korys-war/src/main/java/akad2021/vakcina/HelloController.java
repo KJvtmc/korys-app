@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+//import akad2021.vakcina.HelloController.Result;
+
 @RestController
-@RequestMapping("/")
 public class HelloController {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
@@ -40,11 +40,9 @@ public class HelloController {
         private final int right;
         private final long answer;
     }
-    
-    
 
     // SQL sample
-    @RequestMapping("/calc")
+    @RequestMapping("calc")
     Result calc(@RequestParam int left, @RequestParam int right) {
         MapSqlParameterSource source = new MapSqlParameterSource()
                 .addValue("left", left)
@@ -53,3 +51,4 @@ public class HelloController {
                 (rs, rowNum) -> new Result(left, right, rs.getLong("answer")));
     }
 }
+
