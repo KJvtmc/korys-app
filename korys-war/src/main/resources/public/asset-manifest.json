@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/korys-war/static/css/main.467a4568.chunk.css",
-    "main.js": "/korys-war/static/js/main.1449b27d.chunk.js",
-    "main.js.map": "/korys-war/static/js/main.1449b27d.chunk.js.map",
-    "runtime-main.js": "/korys-war/static/js/runtime-main.03bc797c.js",
-    "runtime-main.js.map": "/korys-war/static/js/runtime-main.03bc797c.js.map",
+    "main.js": "/korys-war/static/js/main.9f627c3f.chunk.js",
+    "main.js.map": "/korys-war/static/js/main.9f627c3f.chunk.js.map",
+    "runtime-main.js": "/korys-war/static/js/runtime-main.73e14bfc.js",
+    "runtime-main.js.map": "/korys-war/static/js/runtime-main.73e14bfc.js.map",
     "static/css/2.68a81a89.chunk.css": "/korys-war/static/css/2.68a81a89.chunk.css",
-    "static/js/2.b2408332.chunk.js": "/korys-war/static/js/2.b2408332.chunk.js",
-    "static/js/2.b2408332.chunk.js.map": "/korys-war/static/js/2.b2408332.chunk.js.map",
-    "static/js/3.cc78d25a.chunk.js": "/korys-war/static/js/3.cc78d25a.chunk.js",
-    "static/js/3.cc78d25a.chunk.js.map": "/korys-war/static/js/3.cc78d25a.chunk.js.map",
+    "static/js/2.51755cd9.chunk.js": "/korys-war/static/js/2.51755cd9.chunk.js",
+    "static/js/2.51755cd9.chunk.js.map": "/korys-war/static/js/2.51755cd9.chunk.js.map",
+    "static/js/3.0d4dcd5c.chunk.js": "/korys-war/static/js/3.0d4dcd5c.chunk.js",
+    "static/js/3.0d4dcd5c.chunk.js.map": "/korys-war/static/js/3.0d4dcd5c.chunk.js.map",
     "index.html": "/korys-war/index.html",
-    "precache-manifest.19214938a69c15af62e919a210e6434d.js": "/korys-war/precache-manifest.19214938a69c15af62e919a210e6434d.js",
+    "precache-manifest.54edfba1849602aa05552a81eac67a2b.js": "/korys-war/precache-manifest.54edfba1849602aa05552a81eac67a2b.js",
     "service-worker.js": "/korys-war/service-worker.js",
     "static/css/2.68a81a89.chunk.css.map": "/korys-war/static/css/2.68a81a89.chunk.css.map",
     "static/css/main.467a4568.chunk.css.map": "/korys-war/static/css/main.467a4568.chunk.css.map",
-    "static/js/2.b2408332.chunk.js.LICENSE.txt": "/korys-war/static/js/2.b2408332.chunk.js.LICENSE.txt"
+    "static/js/2.51755cd9.chunk.js.LICENSE.txt": "/korys-war/static/js/2.51755cd9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.03bc797c.js",
+    "static/js/runtime-main.73e14bfc.js",
     "static/css/2.68a81a89.chunk.css",
-    "static/js/2.b2408332.chunk.js",
+    "static/js/2.51755cd9.chunk.js",
     "static/css/main.467a4568.chunk.css",
-    "static/js/main.1449b27d.chunk.js"
+    "static/js/main.9f627c3f.chunk.js"
   ]
 }

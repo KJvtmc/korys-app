@@ -1,5 +1,5 @@
 import { Form, Button } from "react-bootstrap";
-import { useState, createRef, useContext } from 'react';
+import {  createRef, useContext } from 'react';
 import { LoginContext } from '../contexts/LoginContext';
 import React from 'react';
 import UserContainer from '../containers/UserContainer';
@@ -9,7 +9,7 @@ import axios from 'axios';
 export default function AddProduct() {
 
     //type of data [stateData, stateUpdateFunction] = useState(initialData)
-    let initialValue = [];
+    //let initialValue = [];
     const { productdetails } = useContext(LoginContext);
     // const [products, setProduct] = useState(initialValue);
     const formData = createRef();

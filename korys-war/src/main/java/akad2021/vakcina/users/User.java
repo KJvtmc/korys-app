@@ -2,70 +2,73 @@ package akad2021.vakcina.users;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 @Entity
-@Table(name = "pacientas")
+@Table(name = "user")
 public class User {
 	
+	
 	@Id
-	@Column(name = "asmKodas")
-	@NotNull
-	@Length(min = 8, max = 8)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long userId;
+	
+	@NotEmpty
 	@Column
-	@NotNull
-	@Length(min = 1, max = 30)
-	private String firstName;
+	private String username;
+
+	@NotEmpty
 	@Column
-	@NotNull
-	@Length(min = 1, max = 30)
-	private String lastName;
+	private String password;
 
 	
 	public User() {
 	}
 	
 
-	public User(Long id, String firstName, String lastName) {
+	public User(String username, String password) {
 		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
 	}
 
-	public Long getId() {
-		return id;
+
+	public Long getUserId() {
+		return userId;
 	}
 
-	@Qualifier("id")
-	@Autowired
-	public void setUserName(Long id) {
-		this.id = id;
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
-	public String getFirstName() {
-		return firstName;
+
+	public String getUsername() {
+		return username;
 	}
 
-	@Qualifier("itemFirstName")
-	@Autowired
-	public void setFirstName(String price) {
-		this.firstName = price;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getLastName() {
-		return lastName;
+
+	public String getPassword() {
+		return password;
 	}
 
-	@Qualifier("itemLastName")
-	@Autowired
-	public void setLastName(String quantity) {
-		this.lastName = quantity;
-	};
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 }

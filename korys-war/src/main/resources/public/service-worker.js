@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/korys-war/precache-manifest.19214938a69c15af62e919a210e6434d.js"
+  "/korys-war/precache-manifest.54edfba1849602aa05552a81eac67a2b.js"
 );
 
 self.addEventListener('message', (event) => {
